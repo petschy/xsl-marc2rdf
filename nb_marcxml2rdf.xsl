@@ -313,11 +313,11 @@
 			<!-- has place of publication -->
 			<xsl:for-each select="marc:datafield[@tag='260']">
 				<xsl:for-each select="marc:subfield[@code='a']">
-					<xsl:variable name="str" select="." />
-					<xsl:variable name="str" select="replace($str, '[\[\]]', ' ')" />
-					<xsl:variable name="str" select="replace($str, ' etc. ', '')" />
+					<xsl:variable name="str1" select="." />
+					<xsl:variable name="str2" select="replace($str1, '[\[\]]', ' ')" />
+					<xsl:variable name="str3" select="replace($str2, ' etc. ', '')" />
 					<rdau:P60163 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
-						<xsl:value-of select="nb:stringTool($str)" />
+						<xsl:value-of select="nb:stringTool($str3)" />
 					</rdau:P60163>
 				</xsl:for-each>
 			</xsl:for-each>
@@ -327,13 +327,13 @@
 			<!-- Publisher -->
 			<xsl:for-each select="marc:datafield[@tag='260']">
 				<xsl:for-each select="marc:subfield[@code='b']">
-					<xsl:variable name="str" select="." />
-					<xsl:variable name="str" select="replace($str, '[\[\]]', ' ')" />
-					<xsl:variable name="str" select="replace($str, ' etc. ', '')" />
-					<xsl:variable name="str" select="nb:stringTool($str)" />
-					<xsl:variable name="str" select="replace($str, ',$', '')" />
+					<xsl:variable name="str1" select="." />
+					<xsl:variable name="str2" select="replace($str1, '[\[\]]', ' ')" />
+					<xsl:variable name="str3" select="replace($str2, ' etc. ', '')" />
+					<xsl:variable name="str4" select="nb:stringTool($str3)" />
+					<xsl:variable name="str5" select="replace($str4, ',$', '')" />
 					<dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
-						<xsl:value-of select="$str" />
+						<xsl:value-of select="$str5" />
 					</dc:publisher>
 				</xsl:for-each>
 			</xsl:for-each>

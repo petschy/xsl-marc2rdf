@@ -12,7 +12,7 @@
 		<xsl:param name="delimiter">
 			<xsl:text> </xsl:text>
 		</xsl:param>
-		<xsl:variable name="str">
+		<xsl:variable name="str1">
 			<xsl:for-each select="marc:subfield">
 				<xsl:if test="contains($codes, @code)">
 					<xsl:value-of select="text()" />
@@ -20,10 +20,10 @@
 				</xsl:if>
 			</xsl:for-each>
 		</xsl:variable>
-		<xsl:variable name="str" select="nb:stringTool($str)" />
-		<xsl:if test="$str!=''">
+		<xsl:variable name="str2" select="nb:stringTool($str1)" />
+		<xsl:if test="$str2!=''">
 			<dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
-				<xsl:value-of select="$str" />
+				<xsl:value-of select="$str2" />
 			</dc:creator>
 		</xsl:if>
 	</xsl:template>
@@ -33,7 +33,7 @@
 		<xsl:param name="delimiter">
 			<xsl:text> </xsl:text>
 		</xsl:param>
-		<xsl:variable name="str">
+		<xsl:variable name="str1">
 			<xsl:for-each select="marc:subfield">
 				<xsl:if test="contains($codes, @code)">
 					<xsl:value-of select="text()" />
@@ -41,10 +41,10 @@
 				</xsl:if>
 			</xsl:for-each>
 		</xsl:variable>
-		<xsl:variable name="str" select="nb:stringTool($str)" />
-		<xsl:if test="$str!=''">
+		<xsl:variable name="str2" select="nb:stringTool($str1)" />
+		<xsl:if test="$str2!=''">
 			<dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
-				<xsl:value-of select="$str" />
+				<xsl:value-of select="$str2" />
 			</dc:contributor>
 		</xsl:if>
 	</xsl:template>
@@ -56,7 +56,7 @@
 		<xsl:param name="delimiter">
 			<xsl:text> </xsl:text>
 		</xsl:param>
-		<xsl:variable name="str">
+		<xsl:variable name="str1">
 			<xsl:for-each select="marc:subfield">
 				<xsl:if test="contains($codes, @code)">
 					<xsl:value-of select="text()" />
@@ -64,10 +64,10 @@
 				</xsl:if>
 			</xsl:for-each>
 		</xsl:variable>
-		<xsl:variable name="str" select="nb:cleanupTitle($str)" />
-		<xsl:if test="$str!=''">
+		<xsl:variable name="str2" select="nb:cleanupTitle($str1)" />
+		<xsl:if test="$str2!=''">
 			<rdau:P60493 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
-				<xsl:value-of select="$str" />
+				<xsl:value-of select="$str2" />
 			</rdau:P60493>
 		</xsl:if>
 	</xsl:template>
@@ -79,7 +79,7 @@
 		<xsl:param name="delimiter">
 			<xsl:text> </xsl:text>
 		</xsl:param>
-		<xsl:variable name="str">
+		<xsl:variable name="str1">
 			<xsl:for-each select="marc:subfield">
 				<xsl:if test="contains($codes, @code)">
 					<xsl:value-of select="text()" />
@@ -87,10 +87,10 @@
 				</xsl:if>
 			</xsl:for-each>
 		</xsl:variable>
-		<xsl:variable name="str" select="nb:stringTool($str)" />
-		<xsl:if test="$str!=''">
+		<xsl:variable name="str2" select="nb:stringTool($str1)" />
+		<xsl:if test="$str2!=''">
 			<rdau:P60333 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
-				<xsl:value-of select="$str" />
+				<xsl:value-of select="$str2" />
 			</rdau:P60333>
 		</xsl:if>
 	</xsl:template>
@@ -102,7 +102,7 @@
 		<xsl:param name="delimiter">
 			<xsl:text> </xsl:text>
 		</xsl:param>
-		<xsl:variable name="str">
+		<xsl:variable name="str1">
 			<xsl:for-each select="marc:subfield">
 				<xsl:if test="contains($codes, @code)">
 					<xsl:value-of select="text()" />
@@ -110,12 +110,12 @@
 				</xsl:if>
 			</xsl:for-each>
 		</xsl:variable>
-		<xsl:variable name="str" select="normalize-space($str)" />
-		<xsl:variable name="str" select="replace($str,'. -','')" />
-		<xsl:variable name="str" select="replace($str,' [=:/]','')" />
-		<xsl:if test="$str!=''">
+		<xsl:variable name="str2" select="normalize-space($str1)" />
+		<xsl:variable name="str3" select="replace($str2,'. -','')" />
+		<xsl:variable name="str4" select="replace($str3,' [=:/]','')" />
+		<xsl:if test="$str4!=''">
 			<rdau:P60492 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
-				<xsl:value-of select="$str" />
+				<xsl:value-of select="$str4" />
 			</rdau:P60492>
 		</xsl:if>
 	</xsl:template>
@@ -127,7 +127,7 @@
 		<xsl:param name="delimiter">
 			<xsl:text> </xsl:text>
 		</xsl:param>
-		<xsl:variable name="str">
+		<xsl:variable name="str1">
 			<xsl:for-each select="marc:subfield">
 				<xsl:if test="contains($codes, @code)">
 					<xsl:value-of select="text()" />
@@ -135,12 +135,12 @@
 				</xsl:if>
 			</xsl:for-each>
 		</xsl:variable>
-		<xsl:variable name="str" select="normalize-space($str)" />
-		<xsl:variable name="str" select="replace($str,'. -','')" />
-		<xsl:variable name="str" select="replace($str,' [=:/]','')" />
-		<xsl:if test="$str!=''">
+		<xsl:variable name="str2" select="normalize-space($str1)" />
+		<xsl:variable name="str3" select="replace($str2,'. -','')" />
+		<xsl:variable name="str4" select="replace($str3,' [=:/]','')" />
+		<xsl:if test="$str4!=''">
 			<rdau:P60492 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
-				<xsl:value-of select="$str" />
+				<xsl:value-of select="$str4" />
 			</rdau:P60492>
 		</xsl:if>
 	</xsl:template>
@@ -173,7 +173,7 @@
 		<xsl:param name="delimiter">
 			<xsl:text> ; </xsl:text>
 		</xsl:param>
-		<xsl:variable name="str">
+		<xsl:variable name="str1">
 			<xsl:for-each select="marc:subfield">
 				<xsl:if test="contains($codes, @code)">
 					<xsl:value-of select="text()" />
@@ -181,10 +181,10 @@
 				</xsl:if>
 			</xsl:for-each>
 		</xsl:variable>
-		<xsl:variable name="str" select="nb:stringTool($str)" />
-		<xsl:if test="$str!=''">
+		<xsl:variable name="str2" select="nb:stringTool($str1)" />
+		<xsl:if test="$str2!=''">
 			<dcterms:bibliographicCitation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
-				<xsl:value-of select="$str" />
+				<xsl:value-of select="$str2" />
 			</dcterms:bibliographicCitation>
 		</xsl:if>
 	</xsl:template>
@@ -194,7 +194,7 @@
 		<xsl:param name="delimiter">
 			<xsl:text> </xsl:text>
 		</xsl:param>
-		<xsl:variable name="str">
+		<xsl:variable name="str1">
 			<xsl:for-each select="marc:subfield">
 				<xsl:if test="contains($codes, @code)">
 					<xsl:value-of select="text()" />
@@ -202,10 +202,10 @@
 				</xsl:if>
 			</xsl:for-each>
 		</xsl:variable>
-		<xsl:variable name="str" select="nb:stringTool($str)" />
-		<xsl:if test="$str!=''">
+		<xsl:variable name="str2" select="nb:stringTool($str1)" />
+		<xsl:if test="$str2!=''">
 			<dc:subject rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
-				<xsl:value-of select="$str" />
+				<xsl:value-of select="$str2" />
 			</dc:subject>
 		</xsl:if>
 	</xsl:template>

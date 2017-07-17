@@ -50,28 +50,28 @@
 	<!-- Clean up title string -->
 	<xsl:function name="nb:cleanupTitle">
 		<xsl:param name="s" />
-		<xsl:variable name="str" select="replace($s, ' [/:=;\]]$', '')" />
-		<xsl:variable name="str" select="replace($str, '^[\[]', '')" />
-		<xsl:variable name="str" select="replace($str,'. -$','')" />
-		<xsl:variable name="str" select="replace($str,'&#x0098;','')" />
-		<xsl:variable name="str" select="replace($str,'&#x009C;','')" />
-		<xsl:variable name="str" select="normalize-space($str)" />
-		<xsl:variable name="str" select="normalize-unicode($str, 'NFC')" />
-		<xsl:value-of select="$str" />
+		<xsl:variable name="str1" select="replace($s, ' [/:=;\]]$', '')" />
+		<xsl:variable name="str2" select="replace($str1, '^[\[]', '')" />
+		<xsl:variable name="str3" select="replace($str2,'. -$','')" />
+		<xsl:variable name="str4" select="replace($str3,'&#x0098;','')" />
+		<xsl:variable name="str5" select="replace($str4,'&#x009C;','')" />
+		<xsl:variable name="str6" select="normalize-space($str5)" />
+		<xsl:variable name="str7" select="normalize-unicode($str6, 'NFC')" />
+		<xsl:value-of select="$str7" />
 	</xsl:function>
 
 	<!-- Normalize string -->
 	<xsl:function name="nb:stringTool">
 		<xsl:param name="s" />
-		<xsl:variable name="str" select="$s" />
-		<xsl:variable name="str" select="normalize-space($str)" />
-		<xsl:variable name="str" select="replace($str, ' [:/=;]$', ' ')" />
-		<xsl:variable name="str" select="replace($str,'. -$','')" />
-		<xsl:variable name="str" select="replace($str,'&#x0098;','')" />
-		<xsl:variable name="str" select="replace($str,'&#x009C;','')" />
-		<xsl:variable name="str" select="normalize-space($str)" />
-		<xsl:variable name="str" select="normalize-unicode($str, 'NFC')" />
-		<xsl:value-of select="$str" />
+		<xsl:variable name="str1" select="$s" />
+		<xsl:variable name="str2" select="normalize-space($str1)" />
+		<xsl:variable name="str3" select="replace($str2, ' [:/=;]$', ' ')" />
+		<xsl:variable name="str4" select="replace($str3,'. -$','')" />
+		<xsl:variable name="str5" select="replace($str4,'&#x0098;','')" />
+		<xsl:variable name="str6" select="replace($str5,'&#x009C;','')" />
+		<xsl:variable name="str7" select="normalize-space($str6)" />
+		<xsl:variable name="str8" select="normalize-unicode($str7, 'NFC')" />
+		<xsl:value-of select="$str8" />
 	</xsl:function>
 
 
